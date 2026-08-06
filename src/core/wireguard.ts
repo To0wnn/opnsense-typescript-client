@@ -271,8 +271,8 @@ export class WireguardApi {
   }
 
   // Client methods
-  async clientAddClient(config?: RequestConfig): Promise<ApiResponse<WireguardClientAddClientResponse>> {
-    return this.http.get(`/api/wireguard/client/add_client`, config);
+  async clientAddClient(data?: WireguardClientSetClientRequest, config?: RequestConfig): Promise<ApiResponse<WireguardClientAddClientResponse>> {
+    return this.http.post(`/api/wireguard/client/add_client`, data, config);
   }
 
   async clientAddClientBuilder(data?: WireguardClientAddClientBuilderRequest, config?: RequestConfig): Promise<ApiResponse<WireguardClientAddClientBuilderResponse>> {
