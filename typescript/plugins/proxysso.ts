@@ -15,6 +15,10 @@ export interface ProxyssoServiceCreatekeytabResponse {
   [key: string]: any; // TODO: Define specific response fields
 }
 
+export interface ProxyssoServiceDeletekeytabRequest {
+  [key: string]: any; // TODO: Define specific fields
+}
+
 export interface ProxyssoServiceDeletekeytabResponse {
   result?: string;
   status?: string;
@@ -80,8 +84,8 @@ export class ProxyssoApi {
     return this.client.post(`${this.basePath}/service/createkeytab`, data, config);
   }
 
-  async serviceDeletekeytab(config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyssoServiceDeletekeytabResponse>> {
-    return this.client.get(`${this.basePath}/service/deletekeytab`, config);
+  async serviceDeletekeytab(data?: ProxyssoServiceDeletekeytabRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyssoServiceDeletekeytabResponse>> {
+    return this.client.post(`${this.basePath}/service/deletekeytab`, data, config);
   }
 
   async serviceGetCheckList(config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyssoServiceGetCheckListResponse>> {

@@ -401,6 +401,10 @@ export interface DiagnosticsNetflowReconfigureResponse {
   [key: string]: any; // TODO: Define specific response fields
 }
 
+export interface DiagnosticsNetflowSetconfigRequest {
+  [key: string]: any; // TODO: Define specific fields
+}
+
 export interface DiagnosticsNetflowSetconfigResponse {
   result?: string;
   status?: string;
@@ -959,8 +963,8 @@ export class DiagnosticsApi {
     return this.http.post(`/api/diagnostics/netflow/reconfigure`, data, config);
   }
 
-  async netflowSetconfig(config?: RequestConfig): Promise<ApiResponse<DiagnosticsNetflowSetconfigResponse>> {
-    return this.http.get(`/api/diagnostics/netflow/setconfig`, config);
+  async netflowSetconfig(data?: DiagnosticsNetflowSetconfigRequest, config?: RequestConfig): Promise<ApiResponse<DiagnosticsNetflowSetconfigResponse>> {
+    return this.http.post(`/api/diagnostics/netflow/setconfig`, data, config);
   }
 
   async netflowStatus(config?: RequestConfig): Promise<ApiResponse<DiagnosticsNetflowStatusResponse>> {
