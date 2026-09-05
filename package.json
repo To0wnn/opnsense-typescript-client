@@ -36,6 +36,7 @@
     "dev": "rollup -c --watch",
     "clean": "rm -rf dist",
     "prebuild": "yarn clean",
+    "prepare": "yarn build",
     "pack": "yarn pack",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
