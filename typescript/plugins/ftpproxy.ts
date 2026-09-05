@@ -123,20 +123,20 @@ export class FtpproxyApi {
     return this.client.get(`${this.basePath}/service/reload`, config);
   }
 
-  async serviceRestart(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceRestartResponse>> {
-    return this.client.get(`${this.basePath}/service/restart/${uuid}`, config);
+  async serviceRestart(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceRestartResponse>> {
+    return this.client.post(`${this.basePath}/service/restart/${uuid}`, data, config);
   }
 
-  async serviceStart(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceStartResponse>> {
-    return this.client.get(`${this.basePath}/service/start/${uuid}`, config);
+  async serviceStart(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceStartResponse>> {
+    return this.client.post(`${this.basePath}/service/start/${uuid}`, data, config);
   }
 
   async serviceStatus(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceStatusResponse>> {
     return this.client.get(`${this.basePath}/service/status/${uuid}`, config);
   }
 
-  async serviceStop(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceStopResponse>> {
-    return this.client.get(`${this.basePath}/service/stop/${uuid}`, config);
+  async serviceStop(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FtpproxyServiceStopResponse>> {
+    return this.client.post(`${this.basePath}/service/stop/${uuid}`, data, config);
   }
 
 

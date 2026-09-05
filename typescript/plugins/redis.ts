@@ -98,8 +98,8 @@ export class RedisApi {
     return this.client.post(`${this.basePath}/service/reconfigure`, data, config);
   }
 
-  async serviceResetdb(config?: AxiosRequestConfig): Promise<AxiosResponse<RedisServiceResetdbResponse>> {
-    return this.client.get(`${this.basePath}/service/resetdb`, config);
+  async serviceResetdb(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<RedisServiceResetdbResponse>> {
+    return this.client.post(`${this.basePath}/service/resetdb`, data, config);
   }
 
   async serviceRestart(data?: RedisServiceRestartRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<RedisServiceRestartResponse>> {

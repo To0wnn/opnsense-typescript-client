@@ -169,24 +169,24 @@ export class UdpbroadcastrelayApi {
     return this.client.get(`${this.basePath}/service/reload`, config);
   }
 
-  async serviceRestart(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceRestartResponse>> {
-    return this.client.get(`${this.basePath}/service/restart/${uuid}`, config);
+  async serviceRestart(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceRestartResponse>> {
+    return this.client.post(`${this.basePath}/service/restart/${uuid}`, data, config);
   }
 
   async serviceSet(data?: UdpbroadcastrelayServiceSetRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceSetResponse>> {
     return this.client.post(`${this.basePath}/service/set`, data, config);
   }
 
-  async serviceStart(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceStartResponse>> {
-    return this.client.get(`${this.basePath}/service/start/${uuid}`, config);
+  async serviceStart(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceStartResponse>> {
+    return this.client.post(`${this.basePath}/service/start/${uuid}`, data, config);
   }
 
   async serviceStatus(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceStatusResponse>> {
     return this.client.get(`${this.basePath}/service/status/${uuid}`, config);
   }
 
-  async serviceStop(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceStopResponse>> {
-    return this.client.get(`${this.basePath}/service/stop/${uuid}`, config);
+  async serviceStop(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<UdpbroadcastrelayServiceStopResponse>> {
+    return this.client.post(`${this.basePath}/service/stop/${uuid}`, data, config);
   }
 
 

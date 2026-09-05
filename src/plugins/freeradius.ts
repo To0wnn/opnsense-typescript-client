@@ -718,8 +718,8 @@ export class FreeradiusApi {
     return this.http.post(`/api/freeradius/client/set_client/${uuid}`, data, config);
   }
 
-  async clientToggleClient(uuid: string, config?: RequestConfig): Promise<ApiResponse<FreeradiusClientToggleClientResponse>> {
-    return this.http.get(`/api/freeradius/client/toggle_client/${uuid}`, config);
+  async clientToggleClient(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FreeradiusClientToggleClientResponse>> {
+    return this.http.post(`/api/freeradius/client/toggle_client/${uuid}`, data, config);
   }
 
 
@@ -882,16 +882,16 @@ export class FreeradiusApi {
     return this.http.post(`/api/freeradius/proxy/set_realm/${uuid}`, data, config);
   }
 
-  async proxyToggleHomeserver(uuid: string, config?: RequestConfig): Promise<ApiResponse<FreeradiusProxyToggleHomeserverResponse>> {
-    return this.http.get(`/api/freeradius/proxy/toggle_homeserver/${uuid}`, config);
+  async proxyToggleHomeserver(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FreeradiusProxyToggleHomeserverResponse>> {
+    return this.http.post(`/api/freeradius/proxy/toggle_homeserver/${uuid}`, data, config);
   }
 
-  async proxyToggleHomeserverpool(uuid: string, config?: RequestConfig): Promise<ApiResponse<FreeradiusProxyToggleHomeserverpoolResponse>> {
-    return this.http.get(`/api/freeradius/proxy/toggle_homeserverpool/${uuid}`, config);
+  async proxyToggleHomeserverpool(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FreeradiusProxyToggleHomeserverpoolResponse>> {
+    return this.http.post(`/api/freeradius/proxy/toggle_homeserverpool/${uuid}`, data, config);
   }
 
-  async proxyToggleRealm(uuid: string, config?: RequestConfig): Promise<ApiResponse<FreeradiusProxyToggleRealmResponse>> {
-    return this.http.get(`/api/freeradius/proxy/toggle_realm/${uuid}`, config);
+  async proxyToggleRealm(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FreeradiusProxyToggleRealmResponse>> {
+    return this.http.post(`/api/freeradius/proxy/toggle_realm/${uuid}`, data, config);
   }
 
 
@@ -946,8 +946,8 @@ export class FreeradiusApi {
     return this.http.post(`/api/freeradius/user/set_user/${uuid}`, data, config);
   }
 
-  async userToggleUser(uuid: string, config?: RequestConfig): Promise<ApiResponse<FreeradiusUserToggleUserResponse>> {
-    return this.http.get(`/api/freeradius/user/toggle_user/${uuid}`, config);
+  async userToggleUser(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FreeradiusUserToggleUserResponse>> {
+    return this.http.post(`/api/freeradius/user/toggle_user/${uuid}`, data, config);
   }
 
 }

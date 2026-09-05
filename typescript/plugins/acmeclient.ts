@@ -578,12 +578,12 @@ export class AcmeclientApi {
     return this.client.get(`${this.basePath}/certificates/get/${uuid}`, config);
   }
 
-  async certificatesImport(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientCertificatesImportResponse>> {
-    return this.client.get(`${this.basePath}/certificates/import/${uuid}`, config);
+  async certificatesImport(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientCertificatesImportResponse>> {
+    return this.client.post(`${this.basePath}/certificates/import/${uuid}`, data, config);
   }
 
-  async certificatesRemovekey(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientCertificatesRemovekeyResponse>> {
-    return this.client.get(`${this.basePath}/certificates/removekey/${uuid}`, config);
+  async certificatesRemovekey(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientCertificatesRemovekeyResponse>> {
+    return this.client.post(`${this.basePath}/certificates/removekey/${uuid}`, data, config);
   }
 
   async certificatesRevoke(uuid: string, data?: AcmeclientCertificatesRevokeRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientCertificatesRevokeResponse>> {
@@ -616,16 +616,16 @@ export class AcmeclientApi {
     return this.client.post(`${this.basePath}/service/reconfigure`, data, config);
   }
 
-  async serviceReset(config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientServiceResetResponse>> {
-    return this.client.get(`${this.basePath}/service/reset`, config);
+  async serviceReset(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientServiceResetResponse>> {
+    return this.client.post(`${this.basePath}/service/reset`, data, config);
   }
 
   async serviceRestart(data?: AcmeclientServiceRestartRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientServiceRestartResponse>> {
     return this.client.post(`${this.basePath}/service/restart`, data, config);
   }
 
-  async serviceSignallcerts(config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientServiceSignallcertsResponse>> {
-    return this.client.get(`${this.basePath}/service/signallcerts`, config);
+  async serviceSignallcerts(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientServiceSignallcertsResponse>> {
+    return this.client.post(`${this.basePath}/service/signallcerts`, data, config);
   }
 
   async serviceStart(data?: AcmeclientServiceStartRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<AcmeclientServiceStartResponse>> {

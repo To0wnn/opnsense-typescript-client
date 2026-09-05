@@ -447,8 +447,8 @@ export class CoreApi {
     return this.client.get(`${this.basePath}/backup/backups/${host}`, config);
   }
 
-  async backupDeleteBackup(backup: string, config?: AxiosRequestConfig): Promise<AxiosResponse<CoreBackupDeleteBackupResponse>> {
-    return this.client.get(`${this.basePath}/backup/delete_backup/${backup}`, config);
+  async backupDeleteBackup(backup: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<CoreBackupDeleteBackupResponse>> {
+    return this.client.post(`${this.basePath}/backup/delete_backup/${backup}`, data, config);
   }
 
   async backupDiff(host: string, backup1: string, backup2: string, config?: AxiosRequestConfig): Promise<AxiosResponse<CoreBackupDiffResponse>> {
@@ -463,8 +463,8 @@ export class CoreApi {
     return this.client.get(`${this.basePath}/backup/providers`, config);
   }
 
-  async backupRevertBackup(backup: string, config?: AxiosRequestConfig): Promise<AxiosResponse<CoreBackupRevertBackupResponse>> {
-    return this.client.get(`${this.basePath}/backup/revert_backup/${backup}`, config);
+  async backupRevertBackup(backup: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<CoreBackupRevertBackupResponse>> {
+    return this.client.post(`${this.basePath}/backup/revert_backup/${backup}`, data, config);
   }
 
 

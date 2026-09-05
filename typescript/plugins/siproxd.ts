@@ -271,8 +271,8 @@ export class SiproxdApi {
     return this.client.post(`${this.basePath}/domain/set_domain/${uuid}`, data, config);
   }
 
-  async domainToggleDomain(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<SiproxdDomainToggleDomainResponse>> {
-    return this.client.get(`${this.basePath}/domain/toggle_domain/${uuid}`, config);
+  async domainToggleDomain(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<SiproxdDomainToggleDomainResponse>> {
+    return this.client.post(`${this.basePath}/domain/toggle_domain/${uuid}`, data, config);
   }
 
 
@@ -341,8 +341,8 @@ export class SiproxdApi {
     return this.client.post(`${this.basePath}/user/set_user/${uuid}`, data, config);
   }
 
-  async userToggleUser(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<SiproxdUserToggleUserResponse>> {
-    return this.client.get(`${this.basePath}/user/toggle_user/${uuid}`, config);
+  async userToggleUser(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<SiproxdUserToggleUserResponse>> {
+    return this.client.post(`${this.basePath}/user/toggle_user/${uuid}`, data, config);
   }
 
 }

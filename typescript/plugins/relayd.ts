@@ -194,8 +194,8 @@ export class RelaydApi {
 
 
   // Settings methods
-  async settingsDel(nodeType?: string, uuid?: string, config?: AxiosRequestConfig): Promise<AxiosResponse<RelaydSettingsDelResponse>> {
-    return this.client.get(`${this.basePath}/settings/del/${nodeType}/${uuid}`, config);
+  async settingsDel(nodeType?: string, uuid?: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<RelaydSettingsDelResponse>> {
+    return this.client.post(`${this.basePath}/settings/del/${nodeType}/${uuid}`, data, config);
   }
 
   async settingsDirty(config?: AxiosRequestConfig): Promise<AxiosResponse<RelaydSettingsDirtyResponse>> {

@@ -523,12 +523,12 @@ export class ProxyApi {
     return this.http.post(`/api/proxy/service/reset`, data, config);
   }
 
-  async serviceRestart(config?: RequestConfig): Promise<ApiResponse<ProxyServiceRestartResponse>> {
-    return this.http.get(`/api/proxy/service/restart`, config);
+  async serviceRestart(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<ProxyServiceRestartResponse>> {
+    return this.http.post(`/api/proxy/service/restart`, data, config);
   }
 
-  async serviceStart(config?: RequestConfig): Promise<ApiResponse<ProxyServiceStartResponse>> {
-    return this.http.get(`/api/proxy/service/start`, config);
+  async serviceStart(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<ProxyServiceStartResponse>> {
+    return this.http.post(`/api/proxy/service/start`, data, config);
   }
 
   async serviceStatus(config?: RequestConfig): Promise<ApiResponse<ProxyServiceStatusResponse>> {

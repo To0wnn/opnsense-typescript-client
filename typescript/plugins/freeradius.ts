@@ -723,8 +723,8 @@ export class FreeradiusApi {
     return this.client.post(`${this.basePath}/client/set_client/${uuid}`, data, config);
   }
 
-  async clientToggleClient(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusClientToggleClientResponse>> {
-    return this.client.get(`${this.basePath}/client/toggle_client/${uuid}`, config);
+  async clientToggleClient(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusClientToggleClientResponse>> {
+    return this.client.post(`${this.basePath}/client/toggle_client/${uuid}`, data, config);
   }
 
 
@@ -887,16 +887,16 @@ export class FreeradiusApi {
     return this.client.post(`${this.basePath}/proxy/set_realm/${uuid}`, data, config);
   }
 
-  async proxyToggleHomeserver(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusProxyToggleHomeserverResponse>> {
-    return this.client.get(`${this.basePath}/proxy/toggle_homeserver/${uuid}`, config);
+  async proxyToggleHomeserver(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusProxyToggleHomeserverResponse>> {
+    return this.client.post(`${this.basePath}/proxy/toggle_homeserver/${uuid}`, data, config);
   }
 
-  async proxyToggleHomeserverpool(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusProxyToggleHomeserverpoolResponse>> {
-    return this.client.get(`${this.basePath}/proxy/toggle_homeserverpool/${uuid}`, config);
+  async proxyToggleHomeserverpool(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusProxyToggleHomeserverpoolResponse>> {
+    return this.client.post(`${this.basePath}/proxy/toggle_homeserverpool/${uuid}`, data, config);
   }
 
-  async proxyToggleRealm(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusProxyToggleRealmResponse>> {
-    return this.client.get(`${this.basePath}/proxy/toggle_realm/${uuid}`, config);
+  async proxyToggleRealm(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusProxyToggleRealmResponse>> {
+    return this.client.post(`${this.basePath}/proxy/toggle_realm/${uuid}`, data, config);
   }
 
 
@@ -951,8 +951,8 @@ export class FreeradiusApi {
     return this.client.post(`${this.basePath}/user/set_user/${uuid}`, data, config);
   }
 
-  async userToggleUser(uuid: string, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusUserToggleUserResponse>> {
-    return this.client.get(`${this.basePath}/user/toggle_user/${uuid}`, config);
+  async userToggleUser(uuid: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<FreeradiusUserToggleUserResponse>> {
+    return this.client.post(`${this.basePath}/user/toggle_user/${uuid}`, data, config);
   }
 
 }

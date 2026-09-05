@@ -266,8 +266,8 @@ export class SiproxdApi {
     return this.http.post(`/api/siproxd/domain/set_domain/${uuid}`, data, config);
   }
 
-  async domainToggleDomain(uuid: string, config?: RequestConfig): Promise<ApiResponse<SiproxdDomainToggleDomainResponse>> {
-    return this.http.get(`/api/siproxd/domain/toggle_domain/${uuid}`, config);
+  async domainToggleDomain(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<SiproxdDomainToggleDomainResponse>> {
+    return this.http.post(`/api/siproxd/domain/toggle_domain/${uuid}`, data, config);
   }
 
 
@@ -336,8 +336,8 @@ export class SiproxdApi {
     return this.http.post(`/api/siproxd/user/set_user/${uuid}`, data, config);
   }
 
-  async userToggleUser(uuid: string, config?: RequestConfig): Promise<ApiResponse<SiproxdUserToggleUserResponse>> {
-    return this.http.get(`/api/siproxd/user/toggle_user/${uuid}`, config);
+  async userToggleUser(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<SiproxdUserToggleUserResponse>> {
+    return this.http.post(`/api/siproxd/user/toggle_user/${uuid}`, data, config);
   }
 
 }

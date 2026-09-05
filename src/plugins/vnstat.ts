@@ -143,8 +143,8 @@ export class VnstatApi {
     return this.http.post(`/api/vnstat/service/reconfigure`, data, config);
   }
 
-  async serviceResetdb(config?: RequestConfig): Promise<ApiResponse<VnstatServiceResetdbResponse>> {
-    return this.http.get(`/api/vnstat/service/resetdb`, config);
+  async serviceResetdb(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<VnstatServiceResetdbResponse>> {
+    return this.http.post(`/api/vnstat/service/resetdb`, data, config);
   }
 
   async serviceRestart(data?: VnstatServiceRestartRequest, config?: RequestConfig): Promise<ApiResponse<VnstatServiceRestartResponse>> {

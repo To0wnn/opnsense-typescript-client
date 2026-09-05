@@ -1102,8 +1102,8 @@ export class NginxApi {
     return this.client.get(`${this.basePath}/service/status`, config);
   }
 
-  async serviceStop(config?: AxiosRequestConfig): Promise<AxiosResponse<NginxServiceStopResponse>> {
-    return this.client.get(`${this.basePath}/service/stop`, config);
+  async serviceStop(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<NginxServiceStopResponse>> {
+    return this.client.post(`${this.basePath}/service/stop`, data, config);
   }
 
   async serviceVts(config?: AxiosRequestConfig): Promise<AxiosResponse<NginxServiceVtsResponse>> {

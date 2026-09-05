@@ -442,8 +442,8 @@ export class CoreApi {
     return this.http.get(`/api/core/backup/backups/${host}`, config);
   }
 
-  async backupDeleteBackup(backup: string, config?: RequestConfig): Promise<ApiResponse<CoreBackupDeleteBackupResponse>> {
-    return this.http.get(`/api/core/backup/delete_backup/${backup}`, config);
+  async backupDeleteBackup(backup: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<CoreBackupDeleteBackupResponse>> {
+    return this.http.post(`/api/core/backup/delete_backup/${backup}`, data, config);
   }
 
   async backupDiff(host: string, backup1: string, backup2: string, config?: RequestConfig): Promise<ApiResponse<CoreBackupDiffResponse>> {
@@ -458,8 +458,8 @@ export class CoreApi {
     return this.http.get(`/api/core/backup/providers`, config);
   }
 
-  async backupRevertBackup(backup: string, config?: RequestConfig): Promise<ApiResponse<CoreBackupRevertBackupResponse>> {
-    return this.http.get(`/api/core/backup/revert_backup/${backup}`, config);
+  async backupRevertBackup(backup: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<CoreBackupRevertBackupResponse>> {
+    return this.http.post(`/api/core/backup/revert_backup/${backup}`, data, config);
   }
 
 

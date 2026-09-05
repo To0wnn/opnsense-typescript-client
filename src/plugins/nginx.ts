@@ -1097,8 +1097,8 @@ export class NginxApi {
     return this.http.get(`/api/nginx/service/status`, config);
   }
 
-  async serviceStop(config?: RequestConfig): Promise<ApiResponse<NginxServiceStopResponse>> {
-    return this.http.get(`/api/nginx/service/stop`, config);
+  async serviceStop(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<NginxServiceStopResponse>> {
+    return this.http.post(`/api/nginx/service/stop`, data, config);
   }
 
   async serviceVts(config?: RequestConfig): Promise<ApiResponse<NginxServiceVtsResponse>> {

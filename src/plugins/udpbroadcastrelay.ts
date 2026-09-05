@@ -164,24 +164,24 @@ export class UdpbroadcastrelayApi {
     return this.http.get(`/api/udpbroadcastrelay/service/reload`, config);
   }
 
-  async serviceRestart(uuid: string, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceRestartResponse>> {
-    return this.http.get(`/api/udpbroadcastrelay/service/restart/${uuid}`, config);
+  async serviceRestart(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceRestartResponse>> {
+    return this.http.post(`/api/udpbroadcastrelay/service/restart/${uuid}`, data, config);
   }
 
   async serviceSet(data?: UdpbroadcastrelayServiceSetRequest, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceSetResponse>> {
     return this.http.post(`/api/udpbroadcastrelay/service/set`, data, config);
   }
 
-  async serviceStart(uuid: string, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceStartResponse>> {
-    return this.http.get(`/api/udpbroadcastrelay/service/start/${uuid}`, config);
+  async serviceStart(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceStartResponse>> {
+    return this.http.post(`/api/udpbroadcastrelay/service/start/${uuid}`, data, config);
   }
 
   async serviceStatus(uuid: string, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceStatusResponse>> {
     return this.http.get(`/api/udpbroadcastrelay/service/status/${uuid}`, config);
   }
 
-  async serviceStop(uuid: string, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceStopResponse>> {
-    return this.http.get(`/api/udpbroadcastrelay/service/stop/${uuid}`, config);
+  async serviceStop(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<UdpbroadcastrelayServiceStopResponse>> {
+    return this.http.post(`/api/udpbroadcastrelay/service/stop/${uuid}`, data, config);
   }
 
 

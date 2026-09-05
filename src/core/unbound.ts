@@ -465,8 +465,8 @@ export class UnboundApi {
     return this.http.post(`/api/unbound/service/reconfigure`, data, config);
   }
 
-  async serviceReconfigureGeneral(config?: RequestConfig): Promise<ApiResponse<UnboundServiceReconfigureGeneralResponse>> {
-    return this.http.get(`/api/unbound/service/reconfigure_general`, config);
+  async serviceReconfigureGeneral(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<UnboundServiceReconfigureGeneralResponse>> {
+    return this.http.post(`/api/unbound/service/reconfigure_general`, data, config);
   }
 
   async serviceRestart(data?: UnboundServiceRestartRequest, config?: RequestConfig): Promise<ApiResponse<UnboundServiceRestartResponse>> {

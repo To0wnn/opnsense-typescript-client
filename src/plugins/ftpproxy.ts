@@ -118,20 +118,20 @@ export class FtpproxyApi {
     return this.http.get(`/api/ftpproxy/service/reload`, config);
   }
 
-  async serviceRestart(uuid: string, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceRestartResponse>> {
-    return this.http.get(`/api/ftpproxy/service/restart/${uuid}`, config);
+  async serviceRestart(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceRestartResponse>> {
+    return this.http.post(`/api/ftpproxy/service/restart/${uuid}`, data, config);
   }
 
-  async serviceStart(uuid: string, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceStartResponse>> {
-    return this.http.get(`/api/ftpproxy/service/start/${uuid}`, config);
+  async serviceStart(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceStartResponse>> {
+    return this.http.post(`/api/ftpproxy/service/start/${uuid}`, data, config);
   }
 
   async serviceStatus(uuid: string, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceStatusResponse>> {
     return this.http.get(`/api/ftpproxy/service/status/${uuid}`, config);
   }
 
-  async serviceStop(uuid: string, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceStopResponse>> {
-    return this.http.get(`/api/ftpproxy/service/stop/${uuid}`, config);
+  async serviceStop(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<FtpproxyServiceStopResponse>> {
+    return this.http.post(`/api/ftpproxy/service/stop/${uuid}`, data, config);
   }
 
 

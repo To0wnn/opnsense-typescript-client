@@ -93,8 +93,8 @@ export class RedisApi {
     return this.http.post(`/api/redis/service/reconfigure`, data, config);
   }
 
-  async serviceResetdb(config?: RequestConfig): Promise<ApiResponse<RedisServiceResetdbResponse>> {
-    return this.http.get(`/api/redis/service/resetdb`, config);
+  async serviceResetdb(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<RedisServiceResetdbResponse>> {
+    return this.http.post(`/api/redis/service/resetdb`, data, config);
   }
 
   async serviceRestart(data?: RedisServiceRestartRequest, config?: RequestConfig): Promise<ApiResponse<RedisServiceRestartResponse>> {

@@ -470,8 +470,8 @@ export class UnboundApi {
     return this.client.post(`${this.basePath}/service/reconfigure`, data, config);
   }
 
-  async serviceReconfigureGeneral(config?: AxiosRequestConfig): Promise<AxiosResponse<UnboundServiceReconfigureGeneralResponse>> {
-    return this.client.get(`${this.basePath}/service/reconfigure_general`, config);
+  async serviceReconfigureGeneral(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<UnboundServiceReconfigureGeneralResponse>> {
+    return this.client.post(`${this.basePath}/service/reconfigure_general`, data, config);
   }
 
   async serviceRestart(data?: UnboundServiceRestartRequest, config?: AxiosRequestConfig): Promise<AxiosResponse<UnboundServiceRestartResponse>> {

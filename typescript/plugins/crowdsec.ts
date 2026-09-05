@@ -128,8 +128,8 @@ export class CrowdsecApi {
 
 
   // Decisions methods
-  async decisionsDelete(decisionId: string, config?: AxiosRequestConfig): Promise<AxiosResponse<CrowdsecDecisionsDeleteResponse>> {
-    return this.client.get(`${this.basePath}/decisions/delete/${decisionId}`, config);
+  async decisionsDelete(decisionId: string, data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<CrowdsecDecisionsDeleteResponse>> {
+    return this.client.post(`${this.basePath}/decisions/delete/${decisionId}`, data, config);
   }
 
   async decisionsGet(config?: AxiosRequestConfig): Promise<AxiosResponse<CrowdsecDecisionsGetResponse>> {

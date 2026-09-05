@@ -528,12 +528,12 @@ export class ProxyApi {
     return this.client.post(`${this.basePath}/service/reset`, data, config);
   }
 
-  async serviceRestart(config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyServiceRestartResponse>> {
-    return this.client.get(`${this.basePath}/service/restart`, config);
+  async serviceRestart(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyServiceRestartResponse>> {
+    return this.client.post(`${this.basePath}/service/restart`, data, config);
   }
 
-  async serviceStart(config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyServiceStartResponse>> {
-    return this.client.get(`${this.basePath}/service/start`, config);
+  async serviceStart(data?: Record<string, any>, config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyServiceStartResponse>> {
+    return this.client.post(`${this.basePath}/service/start`, data, config);
   }
 
   async serviceStatus(config?: AxiosRequestConfig): Promise<AxiosResponse<ProxyServiceStatusResponse>> {

@@ -123,8 +123,8 @@ export class CrowdsecApi {
 
 
   // Decisions methods
-  async decisionsDelete(decisionId: string, config?: RequestConfig): Promise<ApiResponse<CrowdsecDecisionsDeleteResponse>> {
-    return this.http.get(`/api/crowdsec/decisions/delete/${decisionId}`, config);
+  async decisionsDelete(decisionId: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<CrowdsecDecisionsDeleteResponse>> {
+    return this.http.post(`/api/crowdsec/decisions/delete/${decisionId}`, data, config);
   }
 
   async decisionsGet(config?: RequestConfig): Promise<ApiResponse<CrowdsecDecisionsGetResponse>> {

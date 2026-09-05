@@ -573,12 +573,12 @@ export class AcmeclientApi {
     return this.http.get(`/api/acmeclient/certificates/get/${uuid}`, config);
   }
 
-  async certificatesImport(uuid: string, config?: RequestConfig): Promise<ApiResponse<AcmeclientCertificatesImportResponse>> {
-    return this.http.get(`/api/acmeclient/certificates/import/${uuid}`, config);
+  async certificatesImport(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<AcmeclientCertificatesImportResponse>> {
+    return this.http.post(`/api/acmeclient/certificates/import/${uuid}`, data, config);
   }
 
-  async certificatesRemovekey(uuid: string, config?: RequestConfig): Promise<ApiResponse<AcmeclientCertificatesRemovekeyResponse>> {
-    return this.http.get(`/api/acmeclient/certificates/removekey/${uuid}`, config);
+  async certificatesRemovekey(uuid: string, data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<AcmeclientCertificatesRemovekeyResponse>> {
+    return this.http.post(`/api/acmeclient/certificates/removekey/${uuid}`, data, config);
   }
 
   async certificatesRevoke(uuid: string, data?: AcmeclientCertificatesRevokeRequest, config?: RequestConfig): Promise<ApiResponse<AcmeclientCertificatesRevokeResponse>> {
@@ -611,16 +611,16 @@ export class AcmeclientApi {
     return this.http.post(`/api/acmeclient/service/reconfigure`, data, config);
   }
 
-  async serviceReset(config?: RequestConfig): Promise<ApiResponse<AcmeclientServiceResetResponse>> {
-    return this.http.get(`/api/acmeclient/service/reset`, config);
+  async serviceReset(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<AcmeclientServiceResetResponse>> {
+    return this.http.post(`/api/acmeclient/service/reset`, data, config);
   }
 
   async serviceRestart(data?: AcmeclientServiceRestartRequest, config?: RequestConfig): Promise<ApiResponse<AcmeclientServiceRestartResponse>> {
     return this.http.post(`/api/acmeclient/service/restart`, data, config);
   }
 
-  async serviceSignallcerts(config?: RequestConfig): Promise<ApiResponse<AcmeclientServiceSignallcertsResponse>> {
-    return this.http.get(`/api/acmeclient/service/signallcerts`, config);
+  async serviceSignallcerts(data?: Record<string, any>, config?: RequestConfig): Promise<ApiResponse<AcmeclientServiceSignallcertsResponse>> {
+    return this.http.post(`/api/acmeclient/service/signallcerts`, data, config);
   }
 
   async serviceStart(data?: AcmeclientServiceStartRequest, config?: RequestConfig): Promise<ApiResponse<AcmeclientServiceStartResponse>> {
